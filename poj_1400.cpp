@@ -10,21 +10,15 @@ using namespace std;
 stack<unsigned char> brackets;
 stack<unsigned char> operators;
 
-void print(char a[],int len){
-	int i,j;
-	for (i=0;i<len&&a[i]!=' ';i++);
-	if (i<len)
-	{
-		j=i;
-		for (;i<len;i++){
-			if (a[i]!=' ')
-			{
-				a[j++]=a[i];
-			}
-		}
-		a[j]=0;
-	}
-	cout<<a<<endl;
+void print(char a[], int len){
+    int i,n;
+    for(i=0,n=0;i<len;i++){
+        if(a[i]!=' ') {
+            a[n++]=a[i];
+        }
+    }
+    a[n]=0;
+    cout<<a<<endl;
 }
 
 void remove_brackets(char a[],int left,int right)
